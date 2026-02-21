@@ -1,0 +1,67 @@
+<h1>AI Story Clip Generator (Freemium Demo)</h1>
+
+<div id="auth">
+  <input type="text" id="username" placeholder="Username" />
+  <input type="password" id="password" placeholder="Password" />
+  <button id="signup">Sign Up</button>
+  <button id="login">Log In</button>
+</div>
+
+<div id="main" style="display:none;">
+  <label for="plan">Select Your Plan:</label>
+  <select id="plan">
+    <option value="free">Free</option>
+    <option value="small">Small - $10/month</option>
+    <option value="medium">Medium - $20/month</option>
+    <option value="full">Full - $30/month</option>
+  </select>
+
+  <textarea id="story" placeholder="Type any prompt here..."></textarea>
+
+  <label for="voice">Select Voice:</label>
+  <select id="voice">
+    <option value="Google UK English Male">Google UK English Male</option>
+    <option value="Google US English Female">Google US English Female</option>
+    <option value="Google UK English Female">Google UK English Female</option>
+    <option value="Pro Voice 1" data-pro="true">Pro Voice 1 (Pro)</option>
+    <option value="Pro Voice 2" data-pro="true">Pro Voice 2 (Pro)</option>
+  </select>
+
+  <label>Select Background:</label>
+  <div class="backgrounds">
+    <img src="https://i.imgur.com/1ZcN1kY.jpg" alt="Minecraft" data-bg="minecraft">
+    <img src="https://i.imgur.com/kG3vNhP.jpg" alt="Subway Surfers" data-bg="subway">
+    <img src="https://i.imgur.com/p0vXG5c.jpg" alt="Horror Hallway" data-bg="horror">
+    <img src="https://i.imgur.com/xqQPeJV.jpg" alt="Aesthetic City" data-bg="aesthetic">
+    <img src="https://i.imgur.com/dProBG.jpg" alt="Pro Background" data-bg="pro" data-pro="true">
+  </div>
+
+  <label>Or upload your own image:</label>
+  <input type="file" id="upload-bg" accept="image/*" />
+
+  <label for="caption">Add Caption:</label>
+  <input type="text" id="caption" placeholder="Enter captions here..." />
+  <input type="checkbox" id="proCaption" /> Use Pro Caption (Pro)
+
+  <button id="generate">Generate Clip</button>
+  <button id="export">Export Video</button>
+
+  <div style="position: relative;">
+    <video id="video" controls></video>
+    <div id="video-caption" style="position:absolute; bottom:10px; left:0; width:100%; text-align:center; font-size:24px; font-weight:bold; color:white; text-shadow:2px 2px 5px black;"></div>
+  </div>
+
+  <p id="pro-counter"></p>
+  <button id="logout">Log Out</button>
+</div>
+
+<!-- Payment Modal -->
+<div id="paymentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); color:#fff; text-align:center; padding-top:50px; z-index:999;">
+  <h2>Upgrade to Pro</h2>
+  <p>Select a plan to unlock unlimited Pro clips, 4K exports, and Pro features!</p>
+  <button class="pay" data-plan="small">$10 / month - Small</button>
+  <button class="pay" data-plan="medium">$20 / month - Medium</button>
+  <button class="pay" data-plan="full">$30 / month - Full</button>
+  <p>Payment Methods: PayPal, Google Pay, Visa, Mastercard, Amex</p>
+  <button id="closePayment">Cancel</button>
+</div>

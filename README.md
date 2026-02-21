@@ -1,2 +1,6 @@
-# ai-story-clip-generator
-AI app that turns Reddit stories into viral TikTok videos automatically
+# Untitled
+
+A Pen created on CodePen.
+
+Original URL: [https://codepen.io/marvelchloe5-creator/pen/VYjoEwR](https://codepen.io/marvelchloe5-creator/pen/VYjoEwR).
+
